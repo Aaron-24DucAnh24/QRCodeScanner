@@ -17,20 +17,23 @@ export default function App() {
   async function removeCode(index: number): Promise<void> {
     if(!codes.length) return
     setCodes(codes => codes.filter((v, i) => i !== index))
+    await asyncStorageService.storeCodes(codes.filter((v, i) => i !== index))
   }
 
   async function addCode(value: string) {
     if(!value) return
     if(codes.includes(value)) return
     setCodes(codes => [...codes, value])
+    await asyncStorageService.storeCodes([...codes, value])
+  }
+
+  async function getCodes() {
+    let initCodes = await asyncStorageService.getCode()
+    setCodes(initCodes)
+    setLoading(false)
   }
 
   useEffect(() => {
-    async function getCodes() {
-      let initCodes = await asyncStorageService.getCode()
-      setCodes(initCodes)
-      setLoading(false)
-    }
     getCodes()
   }, [])
 

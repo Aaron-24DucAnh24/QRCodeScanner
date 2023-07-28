@@ -17,10 +17,8 @@ const style = StyleSheet.create({
     height: 80,
     width: 80,
     borderRadius: 40,
-    borderWidth: 1,
-    borderColor: "black",
     backgroundColor: "silver",
-    opacity: 0.8,
+    opacity: 0.5,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -31,40 +29,38 @@ const style = StyleSheet.create({
 
   notifyContainer: {
     display: "flex",
-    width: 200,
+    width: "100%",
     flexDirection: "column",
     alignItems: "center",
     position: "absolute",
     top: 350,
-    right: (Dimensions.get("window").width - 200)/2
+    paddingHorizontal: 16
   },
 
   notifyBtn: {
-    height: 50,
-    width: 80,
+    height: 40,
+    width: 120,
     display: "flex",
+    backgroundColor: "#57a6ff",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "silver",
-    margin: 16,
+    marginTop: 16,
     borderRadius: 8,
-    fontSize: 20
+    fontSize: 20,
   },
 
   notifyText: {
     color: "#57a6ff",
     fontSize: 20,
-    backgroundColor: "silver",
-    width: "100%",
+    backgroundColor: "white",
+    paddingHorizontal: 8,
+    maxWidth: "100%",
+    overflow: "hidden",
     height: 50,
     textAlign: "center",
     lineHeight: 50,
     borderRadius: 8
   },
-
-  blue: {
-    backgroundColor: "#57a6ff"
-  }
 })
 
 export default style

@@ -38,11 +38,14 @@ export default function Scanner (props: Props) {
       >
       </RNCamera>
  
-      <View style={notifyDisplayed?style.notifyContainer:{display: "none"}}>
+      <View style={notifyDisplayed
+        ?style.notifyContainer
+        :{display: "none"}}>
+          
         <Text style={style.notifyText}>{code}</Text>
 
         <TouchableOpacity 
-          style={[style.notifyBtn, style.blue]}
+          style={[style.notifyBtn]}
           onPress={async ()=> {
             await props.addCode(code)
             props.setDisplayed(false)
