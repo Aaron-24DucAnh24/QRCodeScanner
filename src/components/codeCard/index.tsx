@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, Linking } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign"
 import style from "./style";
 
@@ -11,7 +11,8 @@ interface Props {
 export default function CodeCard (props: Props) {
   return (
     <TouchableOpacity 
-      style={style.container} 
+      style={style.container}
+      onPress={() => Linking.openURL(props.value)} 
       onLongPress={() => props.removeCode(props.index)}
     >
       <Icon name="right" size={30} color="#57A6FF"/>
